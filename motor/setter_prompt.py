@@ -81,7 +81,11 @@ def llamar(k, v, sistema, hist):
         r = subprocess.run(['claude', '-p', f'Conversación hasta ahora:\n\n{chat}\n\nEscribe SOLO tu siguiente mensaje al lead.',
                             '--system-prompt', sistema, '--model', 'sonnet', '--tools', ''],
                            capture_output=True, text=True, timeout=240)
-        return r.stdout.strip() or f'(sin respuesta: {r.stderr.strip()[-200:]})'
+        salida = r.stdout.strip()
+        if r.returncode != 0 or not salida or 'Not logged in' in salida or 'Please run /login' in salida:
+            raise SystemExit('Claude Code no ha contestado (¿sesión iniciada? abre «claude» y haz /login), o pon '
+                             f'ANTHROPIC_API_KEY en {c.BASE / ".env"}. Detalle: {(salida or r.stderr.strip())[-200:]}')
+        return salida
     if k == 'ANTHROPIC_API_KEY':
         req = urllib.request.Request('https://api.anthropic.com/v1/messages', json.dumps(
             {'model': 'claude-sonnet-5-5', 'max_tokens': 400, 'system': sistema, 'messages': hist}).encode(),
