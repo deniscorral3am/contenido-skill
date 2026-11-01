@@ -1,0 +1,108 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panel · 01/11</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root{--bg:#000;--card:#111113;--card2:#18181b;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);
+--tx:#F5F5F7;--tx2:#A1A1A6;--tx3:#6E6E73;--ac:#C9A35A;--ok:#30D158;--warn:#FF9F0A;--bad:#FF453A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.5 Inter,system-ui,sans-serif;font-feature-settings:'cv11','ss01','ss03';
+-webkit-font-smoothing:antialiased;padding:56px 20px 80px}
+.w{max-width:880px;margin:0 auto}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
+h1{font-size:clamp(34px,6vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1.05;margin:12px 0 14px}
+h2{font-size:24px;font-weight:700;letter-spacing:-.03em;margin:0 0 6px}
+h3{font-size:17px;font-weight:600;letter-spacing:-.015em}
+.sub{color:var(--tx2);font-size:18px;max-width:640px}
+.oro{background:linear-gradient(100deg,#C9A35A,#DDBE7C 70%,#F2DDA8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 26px;margin-top:16px}
+.card.dest{border-color:color-mix(in srgb,var(--ac) 35%,transparent);
+background:radial-gradient(120% 80% at 50% -20%,color-mix(in srgb,var(--ac) 16%,transparent),transparent 60%),var(--card)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:28px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.kpi b{display:block;font-size:34px;font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--tx2);font-size:13px}
+.sec{margin-top:48px}
+.row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;
+border:1px solid var(--line2);color:var(--tx2);white-space:nowrap}
+.tag.ac{color:var(--ac);border-color:color-mix(in srgb,var(--ac) 40%,transparent)}
+.tag.ok{color:var(--ok);border-color:rgba(48,209,88,.35)} .tag.bad{color:var(--bad);border-color:rgba(255,69,58,.35)}
+.tag.warn{color:var(--warn);border-color:rgba(255,159,10,.35)}
+.mut{color:var(--tx2)} .mut3{color:var(--tx3);font-size:13px}
+.msg{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:8px;
+color:var(--tx);font-size:14.5px;white-space:pre-wrap}
+.av{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;font-size:15px;
+background:var(--card2);border:1px solid var(--line2);color:var(--ac)}
+a{color:var(--ac);text-decoration:none} a:hover{text-decoration:underline}
+.btn{display:inline-block;background:linear-gradient(100deg,#C9A35A,#DDBE7C 70%,#F2DDA8);color:#1A1406;font-weight:600;
+padding:14px 26px;border-radius:999px;margin-top:18px}
+.btn:hover{text-decoration:none;filter:brightness(1.05)}
+ol.todo{list-style:none;counter-reset:t} ol.todo li{counter-increment:t;display:flex;gap:12px;padding:10px 0;
+border-top:1px solid var(--line)} ol.todo li:first-child{border-top:0}
+ol.todo li:before{content:counter(t);width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;
+font-size:13px;font-weight:700;color:#1A1406;background:var(--ac)}
+table{width:100%;border-collapse:collapse;font-size:15px} td,th{text-align:left;padding:10px 8px;border-top:1px solid var(--line)}
+th{color:var(--tx3);font-weight:500;font-size:13px;border-top:0} td.n{text-align:right;font-variant-numeric:tabular-nums}
+.pie{margin-top:64px;color:var(--tx3);font-size:13px;text-align:center}
+@media (max-width:600px){.card{padding:20px} .row{flex-wrap:wrap}}
+
+h1,h2{text-transform:lowercase}
+.saludo{font-size:clamp(40px,7vw,68px)}
+.ejemplo{display:inline-block;margin-bottom:22px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+color:#1A1406;background:linear-gradient(100deg,#C9A35A,#DDBE7C 70%,#F2DDA8);padding:6px 12px;border-radius:999px}
+.aviso{font-size:13px;color:var(--tx3);margin-top:10px}
+.aviso code,.mut3 code{background:var(--card2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--tx2)}
+.acciones{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.b{font:600 14px Inter,system-ui,sans-serif;border-radius:999px;padding:10px 20px;cursor:pointer;border:1px solid var(--line2);
+background:transparent;color:var(--tx)}
+.b.si{background:linear-gradient(100deg,#C9A35A,#DDBE7C 70%,#F2DDA8);color:#1A1406;border:0}
+.b:hover{filter:brightness(1.08)}
+.hecho .acciones{display:none} .hecho{opacity:.55}
+.estado{font-size:13px;margin-top:10px;color:var(--ac);display:none} .hecho .estado{display:block}
+.prev{max-height:220px;overflow:auto}
+video{width:100%;max-width:300px;border-radius:14px;margin-top:10px;background:#111}
+.num{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;font-size:17px;
+color:#1A1406;background:linear-gradient(140deg,#C9A35A,#DDBE7C 60%,#F2DDA8)}
+.num.off{background:var(--card2);color:var(--tx3);border:1px solid var(--line2)}
+.barra{height:6px;border-radius:99px;background:linear-gradient(90deg,#C9A35A,#DDBE7C 70%,#F2DDA8);margin-top:6px}
+.cerebro li{list-style:none;padding:9px 0;border-top:1px solid var(--line);color:var(--tx2);font-size:14.5px}
+.cerebro li:first-child{border-top:0} .cerebro b{color:var(--ac);font-weight:600}
+</style></head><body><div class="w"><div class="ejemplo">Ejemplo · datos ficticios</div><div class="eyebrow">Tu sistema de contenido · domingo 1 de noviembre</div><h1 class="saludo">buenas noches, marta.</h1><p class="sub">3 ideas nuevas, 1 guion y 1 vídeo esperando tu visto bueno, y la semana planificada. El turno empezó a las 00:00 y terminó a las 00:38. No ha salido nada sin tu visto bueno.</p><div class="grid"><div class="kpi"><b>3</b><span>esperan tu visto bueno</span></div><div class="kpi"><b>1</b><span>guiones listos para grabar</span></div><div class="kpi"><b>1</b><span>reels programados</span></div><div class="kpi"><b>2</b><span>ideas en la recámara</span></div><div class="kpi"><b>17.200</b><span>visitas en 7 días</span></div><div class="kpi"><b>3.500</b><span>visitas medianas por reel</span></div></div><div class="sec"><div class="eyebrow">Te lo trae el jefe de gabinete</div><h2>3 cosas necesitan tu visto bueno.</h2><p class="aviso" id="aviso-servidor">Para que los botones guarden solos, abre el panel con <code>python3 ~/.claude/skills/contenido/motor/panel.py --servir</code>. Desde aquí, el botón copia la orden.</p><div class="card" id="b-B001" data-id="B001"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="tag ac">guion</span><span class="mut3">B001 · de copywriter · 2026-11-01 12:59</span></div><h3 style="margin-top:10px">El fotógrafo más barato es el que menos reserva</h3><p class="mut">TOFU · para mañana a las 19:30</p><div class="msg prev"># El fotógrafo más barato es el que menos reserva · C002 · TOFU · a cámara · 40 s
+Para: fotógrafo que compite por precio · Rompe: «si subo precios me quedo sin bodas» · Sale de: idea I001
+
+## Ganchos
+1. (dicho) El fotógrafo más barato de tu ciudad es el que menos bodas hace. · (pantalla) bajar precios ≠ más bodas · contraste
+2. (dicho) Subí mis precios y me escribieron más parejas. · (pantalla) ¿por qué? · curiosidad
+3. (dicho) Deja de bajar tus precios en enero. · (pantalla) error caro · enemigo común
+
+## Guion
+El fotógrafo más barato de tu ciudad es el que menos bodas hace. Y no es casualidad.
+Una pareja que se gasta 20.000 euros en su boda no busca al más barato: busca al que le da confianza…
+</div><div class="acciones"><button class="b si" onclick="decidir('B001','aprobado')">Aprobar</button><button class="b" onclick="decidir('B001','rechazado')">Pedir cambios</button></div><div class="estado"></div></div><div class="card" id="b-B002" data-id="B002"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="tag ac">vídeo</span><span class="mut3">B002 · de editor · 2026-11-01 12:59</span></div><h3 style="margin-top:10px">bodas.net: gancho B (trial reel)</h3><p class="mut">0:41 · se publica en 3 días a las 13:00, trial</p><p class="mut3">vídeo: editados/C004-bodasnet-B.mp4</p><div class="acciones"><button class="b si" onclick="decidir('B002','aprobado')">Aprobar</button><button class="b" onclick="decidir('B002','rechazado')">Pedir cambios</button></div><div class="estado"></div></div><div class="card" id="b-B003" data-id="B003"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="tag ac">automatización</span><span class="mut3">B003 · de setter · 2026-11-01 12:59</span></div><h3 style="margin-top:10px">Comenta AGENDA</h3><p class="mut">Comentario → DM con la plantilla de mensajes → setter IA. Se monta con Zernio al aprobar.</p><div class="acciones"><button class="b si" onclick="decidir('B003','aprobado')">Aprobar</button><button class="b" onclick="decidir('B003','rechazado')">Pedir cambios</button></div><div class="estado"></div></div></div><div class="sec"><div class="eyebrow">Siete agentes, un solo cerebro</div><h2>lo que ha hecho tu equipo.</h2><div class="card"><div class="row"><div class="num">1</div><div style="flex:1"><h3>Jefe de gabinete</h3><p class="mut">Ha juntado 3 cosas para tu visto bueno y el brief de mañana.</p></div></div><div class="row"><div class="num">2</div><div style="flex:1"><h3>Analista</h3><p class="mut">Ha leído 90 reels de 3 cuentas del nicho y tu cuenta: 3 ideas nuevas por encima de 2x.</p><p class="mut3" style="margin-top:6px"><span style="color:var(--tx)">Subí mis precios un 40 % y tengo más bodas</span> <span class="tag ac">8,7x</span> · @cuenta.ejemplo1</p><p class="mut3" style="margin-top:6px"><span style="color:var(--tx)">3 mensajes que mando a cada pareja</span> <span class="tag ac">4,3x</span> · @cuenta.ejemplo2</p></div></div><div class="row"><div class="num">3</div><div style="flex:1"><h3>Estratega</h3><p class="mut">Semana planificada: 4 reels y 1 trial (60 % alcance, 20 % método, 20 % venta).</p></div></div><div class="row"><div class="num">4</div><div style="flex:1"><h3>Copywriter</h3><p class="mut">Guion de mañana con 3 ganchos y 2 variantes para trial.</p><p class="mut3" style="margin-top:6px"><span style="color:var(--tx)">El fotógrafo más barato es el que menos reserva</span> <span class="tag warn">para aprobar</span></p></div></div><div class="row"><div class="num">5</div><div style="flex:1"><h3>Equipo de edición</h3><p class="mut">Ha editado el crudo de bodas.net con el gancho B (41 s, subtítulos y música).</p></div></div><div class="row"><div class="num">6</div><div style="flex:1"><h3>Publicador</h3><p class="mut">Métricas al día (8 reels) y 1 reel programado para el jueves.</p></div></div><div class="row"><div class="num">7</div><div style="flex:1"><h3>ManyChat + setter IA</h3><p class="mut">Flujo «Comenta AGENDA» listo y 2 objeciones nuevas apuntadas en el cerebro.</p></div></div></div></div><div class="sec"><div class="eyebrow">Tú solo grabas</div><h2>1 guion listo para grabar.</h2><p class="mut">Graba y deja el vídeo en <code>~/Contenido/crudos/</code> con el código delante (p. ej. <code>C004.mov</code>). El editor hace el resto.</p><div class="card"><div class="row"><span class="tag ac">C003</span><div style="flex:1"><h3>3 mensajes que convierten una consulta</h3><p class="mut3">«3 mensajes que mando a cada pareja» · para el 2026-11-03</p></div></div></div></div><div class="sec"><div class="eyebrow">El plan del estratega</div><h2>los próximos 7 días.</h2><div class="card" style="overflow-x:auto"><table><tr><th>Día</th><th>Pieza</th><th>Embudo</th><th>Estado</th></tr><tr><td>lun 2 · 19:30</td><td>El fotógrafo más barato es el que menos reserva</td><td>TOFU</td><td><span class="tag ">guion</span></td></tr><tr><td>mar 3 · 19:30</td><td>3 mensajes que convierten una consulta</td><td>MOFU</td><td><span class="tag ">grabar</span></td></tr><tr><td>mié 4 · 13:00</td><td>bodas.net: gancho B <span class="tag">trial</span></td><td>TOFU</td><td><span class="tag ">editado</span></td></tr><tr><td>jue 5 · 19:30</td><td>POV: editas 2.000 fotos un domingo</td><td>TOFU</td><td><span class="tag ok">programado</span></td></tr><tr><td>sáb 7 · 19:30</td><td>«Es caro»: lo que respondo</td><td>BOFU</td><td><span class="tag ">idea</span></td></tr></table></div></div><div class="sec"><div class="eyebrow">Lo que mide el publicador</div><h2>lo que está funcionando.</h2><div class="card"><div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><h3>Nadie te cuenta esto de bodas.net</h3><span class="mut" style="white-space:nowrap">9.800 · 2.8x</span></div><div class="barra" style="width:100%"></div><p class="mut3">2026-10-30</p></div><div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><h3>Cuánto cobro por una boda</h3><span class="mut" style="white-space:nowrap">7.400 · 2.1x</span></div><div class="barra" style="width:76%"></div><p class="mut3">2026-10-27</p></div><div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><h3>Precios: gancho B</h3><span class="mut" style="white-space:nowrap">5.100 · 1.5x</span></div><div class="barra" style="width:52%"></div><p class="mut3">2026-10-20 · trial</p></div><div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><h3>Mi primera boda: lo que haría distinto</h3><span class="mut" style="white-space:nowrap">3.900 · 1.1x</span></div><div class="barra" style="width:40%"></div><p class="mut3">2026-10-24</p></div><div class="row" style="display:block"><div style="display:flex;justify-content:space-between;gap:12px"><h3>El contrato que me salvó</h3><span class="mut" style="white-space:nowrap">3.500 · 1.0x</span></div><div class="barra" style="width:36%"></div><p class="mut3">2026-10-22</p></div></div><p class="aviso">Mediana de la cuenta: 3.500 visitas. «2x» = el doble de lo normal.</p></div><div class="sec"><div class="eyebrow">El cerebro común</div><h2>lo que ha aprendido.</h2><div class="card"><ul class="cerebro"><li><b>estratega</b> · El BOFU del domingo pasado trajo 6 conversaciones: repetir día <span class="mut3">· 2026-11-01</span></li><li><b>copywriter [voz]</b> · No dice «increíble»: dice «una pasada» <span class="mut3">· 2026-11-01</span></li><li><b>setter [audiencia]</b> · Las parejas dicen «no sabemos si nos lo podemos permitir», no «es caro» <span class="mut3">· 2026-11-01</span></li><li><b>analista [metricas]</b> · En la cuenta, los ganchos de curiosidad doblan a los de pregunta (2,8x frente a 1,1x) <span class="mut3">· 2026-11-01</span></li><li><b>analista [nicho]</b> · Los reels de lista con plantilla copiable hacen 4x la mediana en el nicho (3 de 4 ganadores) <span class="mut3">· 2026-11-01</span></li></ul></div><p class="aviso">Faltan 25 datos en el cerebro (el equipo no se los inventa): audiencia.md → Situación actual (qué tiene hoy, cuánto factura, en qué punto está), audiencia.md → Lo que quiere conseguir, audiencia.md → Lo que más le duele ahora mismo, audiencia.md → Lo que ya ha probado y no le funcionó…. Díselos al jefe cuando puedas.</p></div><p class="pie">Estudio Ejemplo (ficticio) · 7 agentes, un solo cerebro · hecho con Claude</p></div><script>
+const SERVIDOR = false;
+function marcar(id, dec, cmd){
+  const el = document.getElementById('b-' + id); if(!el) return;
+  el.classList.add('hecho');
+  el.querySelector('.estado').innerHTML = (dec === 'aprobado' ? '✓ Aprobado' : '↺ Devuelto al equipo con tu nota') +
+    (cmd ? '<br><span class="mut3">Orden copiada. Pégala en la terminal o dile al jefe: «' + (dec === 'aprobado' ? 'apruebo ' : 'cambia ') + id + '»</span>' : '');
+}
+async function decidir(id, dec){
+  let nota = '';
+  if(dec === 'rechazado'){ nota = prompt('¿Qué cambiarías? El equipo aprende de esto.'); if(nota === null || !nota.trim()) return; }
+  if(SERVIDOR){
+    const r = await fetch('/api/decidir', {method:'POST', headers:{'content-type':'application/json'},
+                                          body: JSON.stringify({id, decision: dec, nota})});
+    if(!r.ok){ alert('No se ha podido guardar: ' + await r.text()); return; }
+    marcar(id, dec);
+  } else {
+    const cmd = 'python3 ~/.claude/skills/contenido/motor/datos.py bandeja ' + (dec === 'aprobado' ? 'aprobar ' : 'rechazar ') + id +
+                (nota ? ' --nota "' + nota.replace(/"/g, "'") + '"' : '');
+    try { navigator.clipboard.writeText(cmd); } catch(e) {}
+    try { localStorage.setItem('dec-' + id, dec); } catch(e) {}
+    marcar(id, dec, cmd);
+  }
+}
+if(!SERVIDOR){ document.querySelectorAll('[data-id]').forEach(el => {
+  let d = null; try { d = localStorage.getItem('dec-' + el.dataset.id); } catch(e) {}
+  if(d) marcar(el.dataset.id, d, true); }); }
+else { const a = document.getElementById('aviso-servidor'); if(a) a.remove(); }
+</script></body></html>
